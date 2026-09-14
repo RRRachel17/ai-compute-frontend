@@ -1,9 +1,58 @@
-<!-- BEGIN:nextjs-agent-rules -->
 
-# This is NOT the Next.js you know
+## 框架信息
+首页 /dashboard
+任务 /tasks
+模型 /models
+资源 /resources
+用量 /usage
+账单 /billing
+API Keys /api-keys
+告警 /alerts
+设置 /settings
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+## 样式风格
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+背景：#f1f5f9
+面板：#ffffff
+主文字：#1d1d23
+辅助说明：#6e7180
+主按钮：#1d1d23
+辅按钮：#fef2f8
+主按钮文字：#09f
+关键 icon / 节点高亮：#e8007b
+选中资源池 / hover 节点卡片：#fef2f8
+选中边框：#f8b2d7
+状态色保留少量业务语义：
+正常 #10b981
+告警 #f59e0b
+失败 #ef4444
 
-<!-- END:nextjs-agent-rules -->
+
+### 用量 / usage
+
+┌──────────────────────────────────────────────────────────────┐
+│ Logo / 算力平台总览                         余额 充值 用户头像 │
+├───────────────┬──────────────────────────────┬───────────────┤
+│ 用户与用量     │ 中间主视觉：GPU 热力图          │ 风险与告警      │
+│ - 当前团队(暂不展示)│ - 资源池分组                   │ - 排队过长      │
+│ - 余额(暂不展示)│ - 节点热力                     │ - 节点异常      │
+│ - 本月用量     │ - GPU 使用率                   │ - 失败任务      │
+│ - 预算进度     │ - hover 看节点详情             │               │
+├───────────────┼──────────────────────────────┼───────────────┤
+│ 任务概览       │ 模型吞吐量排行                  │ GPU 使用趋势    │
+│ - 运行/排队/失败│ - tokens/s 排行                 │ - 24h 折线/柱图 │
+│ - 最近任务     │ - 延迟/错误率                   │               │
+└───────────────┴──────────────────────────────┴───────────────┘
+
+## 数据信息（未完整）
+
+| 表名 | 作用 |
+|---|---|
+| AccountUsage | 账户用量和余额信息 |
+| DashboardMetric | 仪表盘指标数据 |
+| ComputeNode | 计算节点信息 |
+| GpuCard | GPU 显卡详情（一对多关系） |
+| ComputeTask | 任务信息 |
+| ModelThroughput | 模型吞吐量排行 |
+| RiskItem | 风险告警信息 |
+| GpuUsageTrend | GPU 使用趋势数据 |

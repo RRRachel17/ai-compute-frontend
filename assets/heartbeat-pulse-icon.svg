@@ -1,0 +1,16 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heartbeat pulse icon">
+  <defs>
+    <linearGradient id="pulseGradient" x1="176" y1="512" x2="848" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8b2d7"/>
+      <stop offset="0.45" stop-color="#e8007b"/>
+      <stop offset="1" stop-color="#a20056"/>
+    </linearGradient>
+  </defs>
+  <path
+    d="M176 528H326L382 420L466 648L548 332L636 528H848"
+    stroke="url(#pulseGradient)"
+    stroke-width="64"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
