@@ -1,5 +1,5 @@
 import {
-  computeNodes,
+  computeNodes as fallbackComputeNodes,
   gpuTrend,
   metrics,
   modelThroughput,
@@ -7,9 +7,21 @@ import {
   tasks,
   userUsage,
 } from "../mockData";
+import { listHeatmapNodes } from "./api";
 import UsageClient from "./UsageClient";
 
-export default function UsagePage() {
+async function getComputeNodes() {
+  try {
+    return await listHeatmapNodes();
+  } catch (error) {
+    console.error(error);
+    return fallbackComputeNodes;
+  }
+}
+
+export default async function UsagePage() {
+  const computeNodes = await getComputeNodes();
+
   return (
     <UsageClient
       computeNodes={computeNodes}

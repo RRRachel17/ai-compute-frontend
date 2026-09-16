@@ -88,9 +88,12 @@ function buildEntryItems(userUsage: UserUsage) {
 
 export default function HomeClient({ metrics, userUsage }: HomeClientProps) {
   const [activeKey, setActiveKey] = useState("chat");
+  
   const entryItems = useMemo(() => buildEntryItems(userUsage), [userUsage]);
+
   const throughput =
     metrics.find((metric) => metric.label === "今日吞吐")?.value ?? "118.4k";
+
   const activeEntry = useMemo(
     () => entryItems.find((item) => item.key === activeKey) ?? entryItems[2],
     [activeKey, entryItems],
