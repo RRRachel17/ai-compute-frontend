@@ -26,6 +26,94 @@ body {
   text-rendering: geometricPrecision;
 }
 
+
+.app-header {
+  max-width: min(1180px, calc(100vw - 32px));
+}
+
+.app-header-brand,
+.app-header-actions {
+  min-width: 0;
+}
+
+.app-header-nav {
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .app-header {
+    gap: 14px;
+    padding: 14px 16px !important;
+  }
+
+  .app-header-brand {
+    flex-basis: auto;
+    min-width: 168px !important;
+    max-width: 168px !important;
+  }
+
+  .app-header-logo-text {
+    font-size: 20px;
+  }
+
+  .app-header-nav-link {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 820px) {
+  .app-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .app-header-nav {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    order: 3;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .app-header-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .app-header-actions {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-header {
+    max-width: calc(100vw - 24px);
+    padding: 12px !important;
+  }
+
+  .app-header-brand {
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  .app-header-logo-text {
+    font-size: 18px;
+  }
+
+  .app-header-actions {
+    width: 100%;
+  }
+
+  .app-header-actions .ant-btn {
+    width: 100%;
+  }
+
+  .app-header-nav-link {
+    flex: 0 0 auto;
+    padding: 0 14px;
+  }
+}
+
 .app-header-nav-link {
   align-items: center;
   background: transparent !important;

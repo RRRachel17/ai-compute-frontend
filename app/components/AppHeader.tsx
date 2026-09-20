@@ -32,21 +32,22 @@ export default function AppHeader({
 
   return (
     <Header
-      className="mx-auto flex w-full max-w-[1180px] items-center gap-6 rounded-[20px] border border-[#e3e8ef] bg-white px-5 shadow-[0_14px_40px_rgba(29,29,35,0.04)]"
+      className="app-header mx-auto flex w-full max-w-[1180px] items-center gap-6 rounded-[20px] border border-[#e3e8ef] bg-white px-5 shadow-[0_14px_40px_rgba(29,29,35,0.04)]"
       style={{
-        height: 76,
+        minHeight: 76,
+        height: "auto",
         lineHeight: "normal",
         backgroundColor: "#fff",
         maxWidth: 1180,
         width: "100%",
       }}
     >
-      <div className="flex min-w-[220px] max-w-[220px] shrink-0 items-center gap-4">
+      <div className="app-header-brand flex min-w-[220px] max-w-[220px] shrink-0 items-center gap-4">
         <Image src="/homeIcon.png" alt="logo" width={45} height={45} />
-        <span className="text-2xl font-semibold tracking-[-0.01em] text-[#1d1d23]">RRRachel</span>
+        <span className="app-header-logo-text text-2xl font-semibold tracking-normal text-[#1d1d23]">RRRachel</span>
       </div>
 
-      <nav className="flex flex-1 items-center justify-center gap-2 text-sm text-[#6e7180]">
+      <nav className="app-header-nav flex flex-1 items-center justify-center gap-2 text-sm text-[#6e7180]">
         {navItems.map((item) => (
           <Link
             key={item.label}
@@ -59,7 +60,7 @@ export default function AppHeader({
         ))}
       </nav>
 
-      <div className="ml-auto flex shrink-0 items-center gap-3">
+      <div className="app-header-actions ml-auto flex shrink-0 items-center gap-3">
         {isLogin ? (
           <>
             <div className="rounded-full bg-[#f8fafc] px-4 py-2 text-sm text-[#6e7180]">
